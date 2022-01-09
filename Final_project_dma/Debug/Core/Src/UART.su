@@ -1,0 +1,5 @@
+UART.c:13:15:UART_ReadFlag	4	static
+UART.c:19:6:UART_BindPin	4	static
+UART.c:24:6:UART_Init	4	static
+UART.c:49:6:UART_Transmit	16	static
+UART.c:61:6:UART_PrintInt	24	static
