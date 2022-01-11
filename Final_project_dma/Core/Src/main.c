@@ -1,14 +1,3 @@
-/*
- * 	test the program with UART -- tomorrow
- *
- * 	test cases:
- * 	1. transfer 2 items -- done
- * 	2. transfer 20 item
- * 	3. transfer 100 items in polling mode
- * 	4. transfer 84 items in interrupt mode (at max)
- *
- */
-
 #include "GPIO_Interface.h"
 #include "DMA_Interface.h"
 #include "UART_Interface.h"
@@ -25,7 +14,7 @@ unsigned App_TransferStatus = NOT_COMPLETED;
 void App_TransferNotification(void);
 
 
-#define INTERRUPT
+#define INTERRUPT		/* INTERRUPT OR POLLING */
 
 #ifdef INTERRUPT
 
@@ -38,7 +27,7 @@ int main()
 			{
 				DMA2, STREAM5, CHANNEL0,
 				(unsigned int)scr,(unsigned int)dest, HIGH,
-				84, _1BYTE__1_4FIFO,DMA_FLOW_CONTROL,MEM_TO_MEM, ALL
+				100, _1BYTE__1_4FIFO,DMA_FLOW_CONTROL,MEM_TO_MEM, ALL
 			}
 	};
 
